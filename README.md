@@ -8,7 +8,8 @@
 
 ## Requirements
 - fish shell
-- fzf
+- fuzzy finder (default: [fzf])
+  - [fzf], [peco], [zf], [skim]
 - awk
 - sed
 
@@ -25,6 +26,12 @@ ex:
 abbr -a n -f _na
 ```
 
+3. (Optional) Set env-vars
+ex:
+```fish
+set -Ux NA_FUZZY_FINDER sk
+```
+
 ## Usage
 Just type `n` (or your favorite abbr key) and hit space key, then the appropriate node/deno package manager command will be expanded.
 
@@ -35,3 +42,8 @@ Just type `n` (or your favorite abbr key) and hit space key, then the appropriat
 
 ## License
 MIT
+
+[fzf]:https://github.com/junegunn/fzf
+[peco]:https://github.com/peco/peco
+[zf]:https://github.com/natecraddock/zf
+[skim]:https://github.com/lotabout/skim

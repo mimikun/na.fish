@@ -29,7 +29,10 @@ end
 
 function _na_select_package_manager_with_fzf --argument-names path
     set -l package_manager_names npm pnpm bun yarn deno
-    echo ( for i in $package_manager_names; echo $i; end  | fzf)
+    set -l fuzzy_finder
+    [ -n "$NA_FUZZY_FINDER" ]; and set fuzzy_finder $NA_FUZZY_FINDER; or set fuzzy_finder fzf
+
+    echo ( for i in $package_manager_names; echo $i; end  | $fuzzy_finder)
 end
 
 function _na_get_package_manager_name --argument-names path
